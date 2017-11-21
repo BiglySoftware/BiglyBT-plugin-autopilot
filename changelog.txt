@@ -1,0 +1,38 @@
+2017.11.21 | AutoPilot 0.6
+Ported to BiglyBT
+2005.07.10 | AutoPilot 0.5.0
+Feature: Core  | Ability to remove and optionally delete the torrent when seeding is complete
+Feature: Core  | Ability to supress max seed conditional if ratio is not met
+Change : UI    | Seed conditional column now displays infinity sign when disabled
+Change : UI    | Configuration panel and modify dialog updated for new features
+BugFix : UI    | Better handling when config panel throws an exception during generation
+BugFix : Core  | Other minor changes for better exception handling
+
+2005.06.14 | AutoPilot 0.4.0
+Feature: Core  | Min Seed Conditional
+Feature: Core  | Max Seed Conditional
+Feature: Core  | Tracker Overrides
+Change : UI    | Configuration panel updated for new features
+
+2005.05.26 | AutoPilot 0.3.1
+Change : Core  | Compatibilty release for JRE 1.4.2
+Change : Core  | Now Requires JRE 1.4.2 or higher
+
+2005.05.16 | AutoPilot 0.3.0
+Feature: UI    | Configuration panel redesigned with SWT
+Feature: Core  | Individual stop settings for all torrents
+Feature: UI    | "Max Ratio" Column added to both MyDownloads and MySeeders views
+Feature: UI    | Added torrent settings modify option to the MySeeders context menu
+Change : Core  | Polling rewritten to use a single timer core for all seeds
+Change : UI    | Ratio entered in config now uses the standard az format (1000/unit)
+Change : UI    | Removed plugin console for production builds
+Change : UI    | Removed the `10 second warning` popups
+Change : Core  | Now Requires Azureus 2.3.0.0 or higher
+Change : Core  | Now Requires JRE 1.5.0 or higher
+
+2005.04.30 | AutoPilot 0.2.6
+Feature: Core  | New popup warning when seeding is stopped within 10 seconds of actual start
+BugFix : Core  | Prevent multiple stop alerts from being spammed when stopping under certain conditions
+
+2005.04.29 | AutoPilot 0.2.5
+Feature: Core  | Initial Release
