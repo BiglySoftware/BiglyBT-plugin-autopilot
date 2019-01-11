@@ -1,10 +1,10 @@
-Azureus AutoPilot 0.5.0
+BiglyBT AutoPilot 0.5.0
 http://azautopilot.sourceforge.net/
 
 WHAT IS AUTOPILOT
 =================================
 
-AutoPilot is a plugin module for the java BitTorrent client Azureus (http://azureus.sourceforge.net). 
+AutoPilot is a plugin module for the java BitTorrent client BiglyBT (https://biglybt.com).
 
 AutoPilot manages seeding by allowing users to place individual ratio quotas on every torrent. Complimented by an advanced default & tracker override system, users may feel at rest knowing they are contributing back to their community exactly the amount desired.
 
@@ -29,28 +29,28 @@ FEATURES
 REQUIREMENTS:
 =================================
 
-Azureus 2.3.0.0 or higher
-JRE     1.4.2   or higher
+BiglyBT 1.7.0.1 or higher
+JRE     7       or higher
 
 INSTALLATION
 =================================
 
-1) Choose Plugins->Installation Wizard from the main Azureus window.
+1) Choose Plugins->Installation Wizard from the main BiglyBT window.
 2) Choose the 'By file' option and click the Next button.
 3) Browse to the location where you have extracted the AutoPilot jar file and select it and Click the Next button.
 4) Choose your desired Installation type and press Finish.
-5) Restart Azureus.
+5) Restart BiglyBT.
 
-## It is important that you restart Azureus after installation, as some UI components such as columns and context menu options will not be available, which will hinder proper use of the plugin.
+## It is important that you restart BiglyBT after installation, as some UI components such as columns and context menu options will not be available, which will hinder proper use of the plugin.
 
-## When upgrading, you must fully uninstall the previous version through Azureus' uninstall wizard.
+## When upgrading, you must fully uninstall the previous version through BiglyBT' uninstall wizard.
 
 CONFIGURATION OPTIONS
 =================================
 
 New Torrent Defaults:
 ------------------------------------
-Each torrent is assigned its own unique pool of settings when added to the Azureus queue which will inherit from the global defaults you specify in the configuration panel. When installing AutoPilot for the first time, program defaults are supplied, so be sure to change these to your liking.
+Each torrent is assigned its own unique pool of settings when added to the BiglyBT queue which will inherit from the global defaults you specify in the configuration panel. When installing AutoPilot for the first time, program defaults are supplied, so be sure to change these to your liking.
 
 Ratio Stop Mode:
 ------------------------------------
@@ -58,7 +58,7 @@ There are three modes that you may assign to your torrent: "Unlimited Seeding", 
 
 Maximum Share Ratio:
 ------------------------------------
-This field complements the Ratio Stop Mode, and is only used when the mode is set to 'User Defined'. Ratio entered must be in the Azureus ratio format of "x.xxx" where each whole number represents a complete copy.
+This field complements the Ratio Stop Mode, and is only used when the mode is set to 'User Defined'. Ratio entered must be in the BiglyBT ratio format of "x.xxx" where each whole number represents a complete copy.
 
 Minimum swarm seed count:
 ------------------------------------
@@ -74,7 +74,7 @@ If "only when rato is met" option is checked next to the max seed conditional, p
 
 (NEW) Remove when complete:
 ------------------------------------
-When enabled, the torrent entry will automatically be removed from Azureus when seeding is completed. Disabled by default.
+When enabled, the torrent entry will automatically be removed from BiglyBT when seeding is completed. Disabled by default.
 
 (NEW) and delete torrent file:
 ------------------------------------
@@ -98,9 +98,9 @@ Some torrent options have been consolodated into the Flags column for easier dis
 
 Stop on Queued Incomplete Torrents:
 ------------------------------------
-All seeding is terminated when incomplete torrents are queued. This feature is designed for Azureus' "Max active torrents" setting, which when activated can actually impede any downloading if the amount of active seeds clogs every "active" slot. When this setting is enabled, your slots are automatically freed up to make way for new content.
+All seeding is terminated when incomplete torrents are queued. This feature is designed for BiglyBT' "Max active torrents" setting, which when activated can actually impede any downloading if the amount of active seeds clogs every "active" slot. When this setting is enabled, your slots are automatically freed up to make way for new content.
 
-Please note that this is a global setting that affects all torrents managed by Azureus. Currently, there are no 'smart' measures in place to ensure that seeding is only stopped when necessary, the amount of slots stopped, and also does not take seeding priority into account. This option is turned off by default and exists through legacy code. A future release may update this behavior to be more cooperative, but for now some may still find it useful.
+Please note that this is a global setting that affects all torrents managed by BiglyBT. Currently, there are no 'smart' measures in place to ensure that seeding is only stopped when necessary, the amount of slots stopped, and also does not take seeding priority into account. This option is turned off by default and exists through legacy code. A future release may update this behavior to be more cooperative, but for now some may still find it useful.
 
 Prevent stop when force-started:
 ------------------------------------

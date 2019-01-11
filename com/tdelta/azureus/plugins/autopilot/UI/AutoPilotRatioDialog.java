@@ -303,7 +303,7 @@ public class AutoPilotRatioDialog {
                 });
             }
 
-            shell.setSize(369,212);
+            shell.pack();
             Rectangle rClient = shell.getDisplay().getBounds();
             Rectangle rDialog = shell.getBounds();
             shell.setLocation(((rClient.width / 2) - (rDialog.width / 2)), ((rClient.height / 2) - (rDialog.height / 2)));

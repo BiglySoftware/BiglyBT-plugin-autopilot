@@ -50,7 +50,7 @@ import com.biglybt.pif.ui.tables.TableRow;
 import com.biglybt.core.util.Constants;
 
 /**
- * AutoPilot Azureus Plugin. Monitors download activity and automatically stops based on user preferences
+ * AutoPilot BiglyBT Plugin. Monitors download activity and automatically stops based on user preferences
  *
  * @author clewis
  */
@@ -128,9 +128,9 @@ public class AutoPilot implements Plugin, DownloadManagerListener, DownloadListe
             trackeroverrides = new TrackerOverrides(this);
 
             //Create and add the SWT Configuration Panel
-            AutoPilotConfig apconfig = new AutoPilotConfig(this, trackeroverrides);
-            pluginInterface.addConfigSection(apconfig);
             config = pluginInterface.getPluginconfig();
+
+            new AutoPilotConfig(this, pluginInterface, trackeroverrides);
             
             //Register the download attributes with the torrent manager
             attributeMaxShareRatio    = pluginInterface.getTorrentManager().getPluginAttribute("maxshareratio");
@@ -182,7 +182,7 @@ public class AutoPilot implements Plugin, DownloadManagerListener, DownloadListe
         Hashtable htDefaults = trackeroverrides.Get(download.getTorrent().getAnnounceURL().toString());
         if (htDefaults != null) {
             // The tracker for this download is in the override list. Set download to these defaults instead of the global defaults.
-            // Also, since these downloads can be "added" when azureus first starts up, only merge them in if they dont already exist (no clobbering).
+            // Also, since these downloads can be "added" when BiglyBT first starts up, only merge them in if they dont already exist (no clobbering).
             if (download.getAttribute(attributeAutoStopMode) == null)
                 download.setAttribute(attributeAutoStopMode, (String)htDefaults.get("trackermode"));
             if (download.getAttribute(attributeMaxShareRatio) == null)
@@ -195,7 +195,7 @@ public class AutoPilot implements Plugin, DownloadManagerListener, DownloadListe
                 download.setAttribute(attributeOptionsBF, (String)htDefaults.get("trackerbitfield"));
         } else {
             // Set download to the global defaults.
-            // Also, since these downloads can be "added" when azureus first starts up, only merge them in if they dont already exist (no clobbering).
+            // Also, since these downloads can be "added" when BiglyBT first starts up, only merge them in if they dont already exist (no clobbering).
             if (download.getAttribute(attributeAutoStopMode) == null)
                 download.setAttribute(attributeAutoStopMode, "" + config.getUnsafeIntParameter("autopilot_as_defaultmaxratiotype", CONFIG_DEFAULT_STOPMODE));
             if (download.getAttribute(attributeMaxShareRatio) == null)
@@ -212,7 +212,7 @@ public class AutoPilot implements Plugin, DownloadManagerListener, DownloadListe
         download.addListener(this);
         queuedcache = GetQueuedCount();
 
-        //If a torrent is already in the seeding state when autopilot initializes (just installed or Azureus just started up), then call the event handler
+        //If a torrent is already in the seeding state when autopilot initializes (just installed or BiglyBT just started up), then call the event handler
         if (download.getState() == Download.ST_SEEDING)
             this.stateChanged(download, Download.ST_DOWNLOADING, Download.ST_SEEDING);
     }

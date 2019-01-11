@@ -1,5 +1,9 @@
+2019.01.10 | AutoPilot 0.6.1
+Switched config page to new API
+
 2017.11.21 | AutoPilot 0.6
 Ported to BiglyBT
+
 2005.07.10 | AutoPilot 0.5.0
 Feature: Core  | Ability to remove and optionally delete the torrent when seeding is complete
 Feature: Core  | Ability to supress max seed conditional if ratio is not met
