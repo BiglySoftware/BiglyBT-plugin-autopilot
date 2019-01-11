@@ -1,5 +1,5 @@
-BiglyBT AutoPilot 0.5.0
-http://azautopilot.sourceforge.net/
+BiglyBT AutoPilot 0.6.1
+https://github.com/BiglySoftware/BiglyBT-plugin-autopilot
 
 WHAT IS AUTOPILOT
 =================================
